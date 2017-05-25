@@ -1,0 +1,15 @@
+<input id="message"  placeholder="Nombre del torneo?" [(ngModel)]="tournament.title" required minlength="2" maxlength="23" #title='ngModel'
+  autofocus>
+<div *ngIf="tournament.dirty">
+  <span *ngIf='tournament.errors; then errors else valid'>template renders here...</span>
+</div>
+
+<button class="btn btn-primary" (click)="createTournament()" [disabled]="!title.valid">Crear</button>
+
+<ng-template #valid>
+  <p class="text-success">looks good!</p>
+</ng-template>
+
+<ng-template #errors>
+  <p class="text-danger">form contains errors!</p>
+</ng-template>

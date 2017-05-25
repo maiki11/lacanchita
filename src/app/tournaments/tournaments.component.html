@@ -1,0 +1,15 @@
+
+<div class="row columns">
+  <button (click)="logout()" *ngIf="(user | async)?.uid">Logout</button>
+
+  <app-tournament-form id=message></app-tournament-form>
+  <div id="details-container">
+      <p *ngFor="let tournament of tournaments | async">
+        <tournament-detail [tournament]='tournament'></tournament-detail>
+      </p>
+  </div>
+  <button (click)='deleteItems()'>Eliminar todos los torneos</button>
+</div>
+
+
+

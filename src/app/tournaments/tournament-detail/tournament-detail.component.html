@@ -1,0 +1,12 @@
+<div>
+    <h5>{{ tournament.title || 'missing title' }}</h5>
+    Activo: {{ tournament.active }} 
+</div>
+
+<p>
+Activar: 
+<span *ngIf='tournament.active' (click)='updateActive(false)'><i class="fa fa-times" aria-hidden="true"></i>
+</span>
+<span *ngIf='!tournament.active' (click)='updateActive(true)'><i class="fa fa-check" aria-hidden="true"></i></span>
+<span (click)='deleteItem()'><i class="fa fa-trash" aria-hidden="true"></i></span>
+</p>
